@@ -1,5 +1,11 @@
+import { ArticlesProvider } from './context/ArticlesContext';
+
 const App = () => {
-	return <div>App</div>;
+	return (
+		<ArticlesProvider>
+			<div>Articles</div>
+		</ArticlesProvider>
+	);
 };
 
 export default App;
