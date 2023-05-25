@@ -16,8 +16,14 @@ const ArticlesProvider = ({ children }) => {
 		query();
 	}, [category]);
 
+	const handlerChangeCategory = e => {
+		setCategory(e.target.value);
+	};
+
 	return (
-		<ArticlesContext.Provider value={{ category, articles }}>
+		<ArticlesContext.Provider
+			value={{ category, articles, handlerChangeCategory }}
+		>
 			{children}
 		</ArticlesContext.Provider>
 	);

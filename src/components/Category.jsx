@@ -4,17 +4,20 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import CATEGORIES from '../data/Categories';
+import { useContext } from 'react';
+import ArticlesContext from '../context/ArticlesContext';
 
 const Category = () => {
+	const { category, handlerChangeCategory } = useContext(ArticlesContext);
 	return (
 		<FormControl fullWidth>
 			<InputLabel id='demo-simple-select-label'>Category</InputLabel>
 			<Select
 				labelId='demo-simple-select-label'
 				id='demo-simple-select'
-				value={age}
+				value={category}
 				label='Category'
-				onChange={handleChange}
+				onChange={handlerChangeCategory}
 			>
 				{CATEGORIES.map(category => (
 					<MenuItem key={category.value} value={category.value}>

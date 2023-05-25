@@ -1,9 +1,10 @@
+import Category from './components/Category';
 import { ArticlesProvider } from './context/ArticlesContext';
 
 const App = () => {
 	return (
 		<ArticlesProvider>
-			<div>Articles</div>
+			<Category />
 		</ArticlesProvider>
 	);
 };
